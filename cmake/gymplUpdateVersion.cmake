@@ -4,7 +4,7 @@
 #message(STATUS "updateVersion: CMAKE_CURRENT_SOURCE_DIR: ${CMAKE_CURRENT_SOURCE_DIR}")
 #message(STATUS "updateVersion: GIT_EXECUTABLE: ${GIT_EXECUTABLE}")
 
-include(doFindGit)
+include(gymplDoFindGit)
 if (NOT Git_FOUND)
   message(FATAL_ERROR "Cannot update version.hpp without git and Git_FOUND is false")
   return()

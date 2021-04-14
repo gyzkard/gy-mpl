@@ -23,7 +23,7 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 #message(DEBUG "main CMakeLists.txt: PROJECT_SOURCE_DIR: ${PROJECT_SOURCE_DIR}")
 
 
-include(updateVersion)
+include(gymplUpdateVersion)
 
 
 project(gympl
@@ -70,7 +70,7 @@ install(DIRECTORY include/ DESTINATION include
 
 
 if(GYMPL_BUILD_DOCS)
-  include(doFindDoxygen)
+  include(gymplDoFindDoxygen)
   add_subdirectory(docs)
 endif()
 
