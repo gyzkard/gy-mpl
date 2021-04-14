@@ -40,12 +40,14 @@ set(GYMPL_CPP_STD ${CMAKE_CXX_STANDARD} CACHE STRING "C++ Standard. Supported va
 
 include(CMakeDependentOption)
 include(GNUInstallDirs)
-include(CTest)
+if (is_standalone)
+	include(CTest)
 
-cmake_dependent_option(GYMPL_BUILD_DOCS "Build gympl Docs" ON
-  "CMAKE_SOURCE_DIR STREQUAL PROJECT_SOURCE_DIR" OFF)
-cmake_dependent_option(GYMPL_BUILD_TESTS "Build gympl Tests" ON
-  "BUILD_TESTING;CMAKE_SOURCE_DIR STREQUAL PROJECT_SOURCE_DIR" OFF)
+	cmake_dependent_option(GYMPL_BUILD_DOCS "Build gympl Docs" ON
+	  "CMAKE_SOURCE_DIR STREQUAL PROJECT_SOURCE_DIR" OFF)
+	cmake_dependent_option(GYMPL_BUILD_TESTS "Build gympl Tests" ON
+	  "BUILD_TESTING;CMAKE_SOURCE_DIR STREQUAL PROJECT_SOURCE_DIR" OFF)
+endif()
 
 add_library(${PROJECT_NAME} INTERFACE)
 add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
