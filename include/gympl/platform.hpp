@@ -46,6 +46,7 @@
 #define GYMPL_HAS_CONCEPTS
 #define GYMPL_HAS_SPACESHIP
 #define GYMPL_HAS_REMOVE_CV_REF
+#define GYMPL_HAS_LERP
 #endif
 
 #endif
